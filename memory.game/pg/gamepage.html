@@ -1,5 +1,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
+		$("div.content").css("margin-top",  $(document).height()*0.02 + "px");
+
     	$("button#newgame").click(function(){
     		$("div#content").fadeOut(50, function(){
     			$("div#content").load("pg/mainpage.html");
@@ -8,7 +10,7 @@
     	});
     });
 </script>
-<div class="ingame">
+<div id="ingame" class="ingame">
 	<div class="info">
 		<div class="topaddblock">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

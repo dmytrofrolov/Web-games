@@ -58,13 +58,16 @@ div.mainheader{
 	height: 100px;
 }
 
+div.content{
+	margin-left: 5%;
+	margin-right: 5%;
+}
 
 
 /**__________________
 Main menu with ads abd buttons
 */
 div.mainmenu{
-	height: inherit;
 	padding: 20px;
 	text-align: center;
 	background-color: #bac;
@@ -90,5 +93,18 @@ div.mainmenu button{
 }
 
 /*____________
+In game
 */
+div.ingame{
+	height: 100%;
+}
+
+div.ingame div.info{
+	display: none;
+}
+
+div.ingame div.gamearea{
+	height: 100%;
+	background-color: #aaa;
+}
 
