@@ -30,6 +30,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	overflow: hidden;
+	background-color: #111127;
 }
 ol, ul {
 	list-style: none;
@@ -46,3 +48,47 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/*******************
+Main header with logo and menu button
+*/
+
+div.mainheader{
+	background-color: #abc;
+	height: 100px;
+}
+
+
+
+/**__________________
+Main menu with ads abd buttons
+*/
+div.mainmenu{
+	height: inherit;
+	padding: 20px;
+	text-align: center;
+	background-color: #bac;
+}
+
+div.topaddblock{
+	height: 100px;
+	background-color: #aac;
+}
+
+div.maintoppage{
+	margin: 20px;
+}
+
+div.mainbuttons{
+	height: 100%;
+}
+
+div.mainmenu button{
+	width: 30%;
+	height: 10%;
+	margin-bottom: 10px;
+}
+
+/*____________
+*/
+
