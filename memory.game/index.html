@@ -10,10 +10,11 @@
 		    $(document).ready(function() {
 		    	var highscore = 0;
 		    	var mainheaderPart = $(document).height()*0.15;
-		    	var contentPart = $(document).height() - mainheaderPart - $(document).height()*0.04;
+		    	var contentPart = $(document).height() - mainheaderPart - $(document).height()*0.040;
 		    	$("body").css("height", $(document).height());
 		    	$("div.mainheader").css("height", mainheaderPart);
 		    	$("div#content").css("height", contentPart);			
+    			$("div#content").css("margin-top",  $(document).height()*0.020);
 
 		    	if(window.localStorage.getItem("highscore")==null)
 		    		window.localStorage.setItem("highscore", "0");
