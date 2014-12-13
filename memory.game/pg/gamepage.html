@@ -1,11 +1,32 @@
 <script type="text/javascript">
     $(document).ready(function() {
-		$("div.gamearea").fadeOut(0);
+    	var shapesNumber = 0;
+    	var shapesArray = [];
+
+		$("div.gamearea").fadeOut(0, function(){
+			addNewShape();
+		});
+
+		function addNewShape(){
+			var classes = ["circle", "rectangle"];
+			shapesNumber+=1;
+			$("div.gamearea").append("<div class=\""+classes[0]+"\" id=\""+shapesNumber+"\"></div>");
+		}
+
+		function shapeClick(shapeId){
+			//if user clicks on shape
+		}
+
     	$("button#newgame").click(function(){
     		$("div#content").fadeOut(50, function(){
     			$("div#content").load("pg/mainpage.html");
     		});
 	    	
+    	});
+
+    	$("button.next").click(function(){
+    		$("div.info").fadeOut(10);
+    		$("div.gamearea").fadeIn(10);
     	});
     });
 </script>
@@ -20,8 +41,9 @@
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		</div>
 		<div class="gameinstruction">
-			<div>Level</div><span>1</span>
-			<div>Click on last added shape</div>
+			<div>Level <span>1</span></div>
+			<div>Click on the last added shape</div>
+			<button class="next">GO!</button>
 		</div>
 	</div>
 	<div class="gamearea">
