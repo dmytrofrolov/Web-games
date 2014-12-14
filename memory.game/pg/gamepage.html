@@ -1,21 +1,14 @@
 <script type="text/javascript">
-    $(document).ready(function() {
-    	var shapesNumber = 0;
-    	var shapesArray = [];
+	var shapesNumber = 0;	//number of shapes and scores
+	var shapesArray = [];	//array with type, size, position of the shapes
+	var minSize = $(document).height()>$(document).width()?$(document).width()*0.9:$(document).height()*0.81;//minimal height or width of screen
+	var minShapeSize = minSize * 0.10;
+	var maxShapeSize = minSize * 0.30;
 
+    $(document).ready(function() {
 		$("div.gamearea").fadeOut(0, function(){
 			addNewShape();
 		});
-
-		function addNewShape(){
-			var classes = ["circle", "rectangle"];
-			shapesNumber+=1;
-			$("div.gamearea").append("<div class=\""+classes[0]+"\" id=\""+shapesNumber+"\"></div>");
-		}
-
-		function shapeClick(shapeId){
-			//if user clicks on shape
-		}
 
     	$("button#newgame").click(function(){
     		$("div#content").fadeOut(50, function(){
@@ -29,6 +22,18 @@
     		$("div.gamearea").fadeIn(10);
     	});
     });
+
+	function shapeClick(shapeId){
+		//if user clicks on shape
+		alert(shapesNumber);
+	}
+
+	function addNewShape(){
+		var classes = ["circle", "rectangle"];
+		shapesNumber+=1;
+		$("div.gamearea").append("<div class=\""+classes[0]+"\" id=\""+shapesNumber+"\" onclick=\"shapeClick("+shapesNumber+");\"></div>");
+	}
+
 </script>
 <div id="ingame" class="ingame">
 	<div class="info">
@@ -41,7 +46,7 @@
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		</div>
 		<div class="gameinstruction">
-			<div>Level <span>1</span></div>
+			<div>Level <span id="levelnumber">0</span></div>
 			<div>Click on the last added shape</div>
 			<button class="next">GO!</button>
 		</div>
