@@ -112,9 +112,8 @@ div.ingame div.gamearea{
 
 div.gamearea div.circle{
 	position: absolute;
+	margin-left: 5%;
 	background-color: #ffa;
-	width:10px;
-	height: 10px;
 	top: 50%;
 	border-radius: 100px;
 }

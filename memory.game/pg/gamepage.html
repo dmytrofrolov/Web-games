@@ -2,20 +2,15 @@
 	var shapesNumber = 0;	//number of shapes and scores
 	var shapesArray = [];	//array with type, size, position of the shapes
 	var minSize = $(document).height()>$(document).width()?$(document).width()*0.9:$(document).height()*0.81;//minimal height or width of screen
-	var minShapeSize = minSize * 0.10;
-	var maxShapeSize = minSize * 0.30;
+	var minShapeSize = minSize * 0.02;
+	var maxShapeSize = minSize * 0.10;
+	var gameareaWidth = parseInt($("div.gamearea").css("width"));
+	var gameareaHeight = parseInt($("div.gamearea").css("height"));
 
     $(document).ready(function() {
 		$("div.gamearea").fadeOut(0, function(){
 			addNewShape();
 		});
-
-    	$("button#newgame").click(function(){
-    		$("div#content").fadeOut(50, function(){
-    			$("div#content").load("pg/mainpage.html");
-    		});
-	    	
-    	});
 
     	$("button.next").click(function(){
     		$("div.info").fadeOut(10);
@@ -25,13 +20,34 @@
 
 	function shapeClick(shapeId){
 		//if user clicks on shape
-		alert(shapesNumber);
+		addNewShape();
 	}
 
 	function addNewShape(){
 		var classes = ["circle", "rectangle"];
 		shapesNumber+=1;
-		$("div.gamearea").append("<div class=\""+classes[0]+"\" id=\""+shapesNumber+"\" onclick=\"shapeClick("+shapesNumber+");\"></div>");
+		var newShapeStyle = "";
+		var newShapeSize, newShapeX, newShapeY;
+		var problems = 0;
+		do{
+			problems = 0;
+			newShapeSize = Math.random()*(maxShapeSize-minShapeSize)+minShapeSize;
+			newShapeX = (gameareaWidth - newShapeSize * 2)	*Math.random();
+			newShapeY = (gameareaHeight - newShapeSize * 2)*Math.random();
+			newShapeX+=newShapeSize;
+			newShapeY+=newShapeSize;
+			for(var i = 0; i < shapesArray.length; i++){
+				//alert(Math.pow(newShapeX - shapesArray[i][2][0],2));
+				if( ( (Math.pow(newShapeX - shapesArray[i][2][0],2)+Math.pow(newShapeY - shapesArray[i][2][1],2))<
+					Math.pow(shapesArray[i][1]/2+newShapeSize/2,2) ) )
+					problems+=1;
+			}
+		}while(problems!=0);
+		shapesArray.push(["circle",newShapeSize,[newShapeX,newShapeY]]);
+		newShapeStyle += "height: "+newShapeSize+"px; width: "+newShapeSize+"px;";
+		newShapeStyle += "top: "+newShapeY+"px; left: "+newShapeX+"px;";
+		//alert(newShapeStyle);
+		$("div.gamearea").append("<div class=\""+classes[0]+"\" id=\""+shapesNumber+"\" onclick=\"shapeClick("+shapesNumber+");\" style=\""+newShapeStyle+"\"></div>");
 	}
 
 </script>
