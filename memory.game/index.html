@@ -9,13 +9,13 @@
 		<script type="text/javascript">
 		    $(document).ready(function() {
 		    	var highscore = 0;
-		    	var mainheaderPart = $(document).height()*0.15;
-		    	var contentPart = $(document).height() - mainheaderPart - $(document).height()*0.040;
+		    	var mainheaderPart = $(document).height()*0.10;
+		    	var contentPart = $(document).height() - mainheaderPart - $(document).height()*0.080;
 		    	$("body").css("height", $(document).height());
 		    	$("div.mainheader").css("height", mainheaderPart);
 		    	$("div#content").css("height", contentPart);			
-				$("div.circle").css("margin-top",  $(document).height()*0.020);
-    			$("div#content").css("margin-top",  $(document).height()*0.020);
+				//$("div.circle").css("margin-top",  $(document).height()*0.020);
+    			$("div#content").css("margin-top",  $(document).height()*0.050);
 
 		    	if(window.localStorage.getItem("highscore")==null)
 		    		window.localStorage.setItem("highscore", "0");
@@ -23,8 +23,8 @@
 		    	if(window.localStorage.getItem("highscore"))
 		    		highscore = window.localStorage.getItem("highscore");
 
-		    	//$("div#content").load("pg/mainpage.html");
-				$("div#content").load("pg/gamepage.html");
+		    	$("div#content").load("/pg/mainpage.html");
+				//$("div#content").load("pg/gamepage.html");
     	    	
     	    	$("button#home").click(function(){
 		    		$("div#content").fadeOut(100, function(){

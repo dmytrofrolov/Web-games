@@ -101,8 +101,47 @@ div.ingame{
 }
 
 div.ingame div.info{
-	height: inherit;
+	height: 100%;
 	background-color: #723;
+}
+
+div.info div.gameinstruction{
+	height: 80%;
+	width:100%;
+	margin-top:0px;
+}
+
+div.gameinstruction div#message{
+	text-align: center;
+		font-size: 3em;
+}
+
+div.gameinstruction div.level{
+	font-size: 2em;
+	text-align: center;
+}
+
+div.gameinstruction div.level span{
+		font-size: 1.4em;
+		margin-left: 10px;
+		margin-top: 5px;
+}
+
+div.ingame div.info div.gameinstruction button{
+	width: 50%;
+	height: 50%;
+	margin-top: 2%;
+	margin-left: 25%;
+	font-size: 3em;
+	font-weight: 800;
+	color:#ffa;
+	border: none;
+	background-color: #223;
+	box-shadow: 1px 1px 2px 3px #557;
+}
+
+div.ingame div.info div.gameinstruction button:hover{
+		box-shadow: 1px 1px 2px 3px #88a;
 }
 
 div.ingame div.gamearea{
@@ -112,7 +151,7 @@ div.ingame div.gamearea{
 
 div.gamearea div.circle{
 	position: absolute;
-	margin-left: 5%;
+	margin-left: 4%;
 	background-color: #ffa;
 	top: 50%;
 	border-radius: 100px;

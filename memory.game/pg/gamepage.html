@@ -1,26 +1,45 @@
 <script type="text/javascript">
 	var shapesNumber = 0;	//number of shapes and scores
 	var shapesArray = [];	//array with type, size, position of the shapes
-	var minSize = $(document).height()>$(document).width()?$(document).width()*0.9:$(document).height()*0.81;//minimal height or width of screen
-	var minShapeSize = minSize * 0.02;
-	var maxShapeSize = minSize * 0.10;
-	var gameareaWidth = parseInt($("div.gamearea").css("width"));
-	var gameareaHeight = parseInt($("div.gamearea").css("height"));
+	var minSize = $(window).height()>$(window).width()?$(window).width()*0.9:$(window).height()*0.80;//minimal height or width of screen
+	var marginTopForCircles = $(window).height() * 0.125;
+	var minShapeSize = parseInt(minSize) * 0.05;
+	var maxShapeSize = parseInt(minSize) * 0.10;
+	var gameareaWidth = $(window).width() * 0.90;
+	var gameareaHeight = $(window).height() * 0.80;
+	//$("div.gamearea").innerHTML = "";
 
     $(document).ready(function() {
+		gameareaWidth = $(window).width() * 0.90;
+		gameareaHeight = $(window).height() * 0.80;
 		$("div.gamearea").fadeOut(0, function(){
 			addNewShape();
 		});
 
     	$("button.next").click(function(){
-    		$("div.info").fadeOut(10);
-    		$("div.gamearea").fadeIn(10);
+    		$("div.info").fadeOut(100, function(){
+	    		document.getElementById("message").innerHTML = "";
+	    		$("div.gamearea").fadeIn(100);
+    		});    		
     	});
     });
 
 	function shapeClick(shapeId){
 		//if user clicks on shape
-		addNewShape();
+		$("div.gamearea").fadeOut(100, function(){
+			$("div.info").fadeIn(100,function(){
+				addNewShape();
+			});
+		});
+		if(shapeId==shapesNumber){
+			//
+			document.getElementById("levelnumber").innerHTML = shapesNumber.toString(); 
+		}else{
+			document.getElementById("message").innerHTML = "Sorry, you loose!";
+			document.getElementById("gamearea").innerHTML = "";
+			shapesNumber = 0;	//number of shapes and scores
+			shapesArray = [];
+		}
 	}
 
 	function addNewShape(){
@@ -38,8 +57,8 @@
 			newShapeY+=newShapeSize;
 			for(var i = 0; i < shapesArray.length; i++){
 				//alert(Math.pow(newShapeX - shapesArray[i][2][0],2));
-				if( ( (Math.pow(newShapeX - shapesArray[i][2][0],2)+Math.pow(newShapeY - shapesArray[i][2][1],2))<
-					Math.pow(shapesArray[i][1]/2+newShapeSize/2,2) ) )
+				if( ( (Math.pow(newShapeX + newShapeSize/2 - shapesArray[i][2][0] - shapesArray[i][1]/2,2)+Math.pow(newShapeY + newShapeSize/2 - shapesArray[i][2][1] - shapesArray[i][1]/2,2))<
+					Math.pow(shapesArray[i][1]/2+newShapeSize/2+5,2) ) )
 					problems+=1;
 			}
 		}while(problems!=0);
@@ -48,6 +67,7 @@
 		newShapeStyle += "top: "+newShapeY+"px; left: "+newShapeX+"px;";
 		//alert(newShapeStyle);
 		$("div.gamearea").append("<div class=\""+classes[0]+"\" id=\""+shapesNumber+"\" onclick=\"shapeClick("+shapesNumber+");\" style=\""+newShapeStyle+"\"></div>");
+		$("div.circle").css("margin-top",  marginTopForCircles);
 	}
 
 </script>
@@ -62,11 +82,12 @@
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 		</div>
 		<div class="gameinstruction">
-			<div>Level <span id="levelnumber">0</span></div>
-			<div>Click on the last added shape</div>
+			<div id="message"></div>
+			<div class="level">Level <span id="levelnumber">0</span></div>
+			<div align="center">Click on the last added shape</div>
 			<button class="next">GO!</button>
 		</div>
 	</div>
-	<div class="gamearea">
+	<div id="gamearea" class="gamearea">
 	</div>
 </div>
