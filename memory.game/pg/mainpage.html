@@ -2,9 +2,8 @@
     $(document).ready(function() {
     	$("button#newgame").click(function(){
     		$("div#content").fadeOut(100, function(){
-    			$("div#content").load("/pg/gamepage.html",function(){
-    				$("div#content").fadeIn(100);
-    			});
+    			$("div#content").load("/pg/gamepage.html");
+				$("div#content").fadeIn(100);
     		});
 	    	
     	});

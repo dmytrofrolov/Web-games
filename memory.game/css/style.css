@@ -199,6 +199,12 @@ div.gamearea div.circle{
 	border-radius: 100px;
 }
 
+div.gamearea .wrong,
+div.gamearea .wrong:hover{
+		background-color: #f55 !important;;
+		box-shadow: 0px 0px 5px 1px #f55 !important;
+}
+
 div.gamearea div.circle:hover{
 	box-shadow: 0px 0px 5px 1px #ff5;
 }

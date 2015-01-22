@@ -27,20 +27,36 @@
 
 	function shapeClick(shapeId){
 		//if user clicks on shape
-		$("div.gamearea").fadeOut(fadeSpeed, function(){
-			$("div.info").fadeIn(fadeSpeed,function(){
-				addNewShape();
-			});
-		});
 		if(shapeId==shapesNumber){
 			//
-			document.getElementById("levelnumber").innerHTML = shapesNumber.toString(); 
+			document.getElementById("levelnumber").innerHTML = shapesNumber.toString();
+			$("div.gamearea").fadeOut(fadeSpeed, function(){
+				$("div.info").fadeIn(fadeSpeed,function(){
+					addNewShape();
+				});
+			});
 		}else{
-			document.getElementById("message").innerHTML = "Sorry, you loose!";
-			document.getElementById("gamearea").innerHTML = "";
-			shapesNumber = 0;	//number of shapes and scores
-			shapesArray = [];
+			var oneBlinkTime = 400, blinkTimes = 7;
+			$("div#"+shapesNumber.toString()).toggleClass("wrong");
+			for(var i = 0; i<blinkTimes;i++)
+				setTimeout(function(){
+				    $("div#"+shapesNumber.toString()).toggleClass("wrong");
+				}, oneBlinkTime*i);
+
+			setTimeout(function () {
+				document.getElementById("message").innerHTML = "Sorry, you loose!";
+				document.getElementById("gamearea").innerHTML = "";
+				shapesNumber = 0;	//number of shapes and scores
+				shapesArray = [];
+				$("div.gamearea").fadeOut(fadeSpeed, function(){
+					$("div.info").fadeIn(fadeSpeed,function(){
+						addNewShape();
+					});
+				});
+		    }, oneBlinkTime * blinkTimes);
 		}
+
+
 	}
 
 	function addNewShape(){
