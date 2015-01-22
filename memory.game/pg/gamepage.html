@@ -2,6 +2,7 @@
 	var shapesNumber = 0;	//number of shapes and scores
 	var shapesArray = [];	//array with type, size, position of the shapes
 	var minSize = $(window).height()>$(window).width()?$(window).width()*0.9:$(window).height()*0.80;//minimal height or width of screen
+	var fadeSpeed = 50;
 	var marginTopForCircles = $(window).height() * 0.125;
 	var minShapeSize = parseInt(minSize) * 0.05;
 	var maxShapeSize = parseInt(minSize) * 0.10;
@@ -17,17 +18,17 @@
 		});
 
     	$("button.next").click(function(){
-    		$("div.info").fadeOut(100, function(){
+    		$("div.info").fadeOut(fadeSpeed, function(){
 	    		document.getElementById("message").innerHTML = "";
-	    		$("div.gamearea").fadeIn(100);
+	    		$("div.gamearea").fadeIn(fadeSpeed);
     		});    		
     	});
     });
 
 	function shapeClick(shapeId){
 		//if user clicks on shape
-		$("div.gamearea").fadeOut(100, function(){
-			$("div.info").fadeIn(100,function(){
+		$("div.gamearea").fadeOut(fadeSpeed, function(){
+			$("div.info").fadeIn(fadeSpeed,function(){
 				addNewShape();
 			});
 		});

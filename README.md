@@ -6,4 +6,4 @@ HTML/CSS/JS
 Phonegap
 
 You can see the first release for this game:
-* (Train your game)[http://memory.udesgo.com]
+* [Train your game](http://memory.udesgo.com)

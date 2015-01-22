@@ -105,6 +105,7 @@ div.mainmenu{
 }
 
 div.topaddblock{
+	text-align: center;
 	height: 100px;
 	overflow: hidden;
 }
@@ -143,7 +144,7 @@ div.ingame{
 div.ingame div.info{
 	height: 100%;
 	background-image: url(/img/lightback.jpg);
-	background-color: #ddf;
+	background-color: #eef;
 }
 
 div.info div.gameinstruction{
