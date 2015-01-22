@@ -29,9 +29,11 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
+	background: url(/img/darkback.jpg) #111127;
+	background-repeat: repeat-x repeat-y;
 	line-height: 1;
 	overflow: hidden;
-	background-color: #111127;
+	font-family: Helvetica;
 }
 ol, ul {
 	list-style: none;
@@ -54,13 +56,42 @@ Main header with logo and menu button
 */
 
 div.mainheader{
-	background-color: #abc;
+	background-color: #ffe;
+	background-image: url(/img/lightback.jpg);
 	height: 100px;
+}
+div.mainheader div.titleinheader{
+	margin-top: 1%;
+	margin-left: 5%;
+	float: left;
+	font-size: 3em;
+	font-weight: 500;
+	color: #24f;
+	text-shadow: 1px 1px 2px #002;
+}
+
+div.mainheader button{
+	height: 50px;
+	border: none;
+	margin-right: 5px;
+	float: right;
+	font-weight: 600;
+	color: #118;
+	background-color: #cdf;
+}
+div.mainheader button:hover{
+	box-shadow: 0px 0px 2px 2px #227;
+	margin: 1px 6px;
+	
 }
 
 div.content{
 	margin-left: 5%;
 	margin-right: 5%;
+	background-color: #ffe;
+	background-image: url(/img/lightback.jpg);
+	background-repeat: repeat;
+	font-size: 1.5em;
 }
 
 
@@ -68,14 +99,13 @@ div.content{
 Main menu with ads abd buttons
 */
 div.mainmenu{
-	padding: 20px;
+	margin: 20px 0px;
+	height: 100%;
 	text-align: center;
-	background-color: #bac;
 }
 
 div.topaddblock{
-	height: 50px;
-	background-color: #aac;
+	height: 100px;
 	overflow: hidden;
 }
 
@@ -84,13 +114,23 @@ div.maintoppage{
 }
 
 div.mainbuttons{
-	height: 100%;
+	height: 50%;
 }
 
 div.mainmenu button{
-	width: 30%;
-	height: 10%;
+	width: 40%;
+	height: 30%;
 	margin-bottom: 10px;
+	color: #22f;
+	font-size: 1.5em;
+	border: none;
+	box-shadow: 0px 0px 3px 3px #aaf;
+	background-color: #eff;
+}
+
+div.mainmenu button:hover{
+	box-shadow: 0px 0px 5px 7px #aaf;
+	text-shadow: 1px 1px 2px #99c;
 }
 
 /*____________
@@ -102,7 +142,8 @@ div.ingame{
 
 div.ingame div.info{
 	height: 100%;
-	background-color: #723;
+	background-image: url(/img/lightback.jpg);
+	background-color: #ddf;
 }
 
 div.info div.gameinstruction{
@@ -136,23 +177,23 @@ div.ingame div.info div.gameinstruction button{
 	font-weight: 800;
 	color:#ffa;
 	border: none;
-	background-color: #223;
+	background-color: #112;
 	box-shadow: 1px 1px 2px 3px #557;
 }
 
 div.ingame div.info div.gameinstruction button:hover{
-		box-shadow: 1px 1px 2px 3px #88a;
+		box-shadow: 1px 1px 5px 6px #88a;
 }
 
 div.ingame div.gamearea{
 	height: 100%;
-	background-color: #aaa;
+	background-color: #112;
 }
 
 div.gamearea div.circle{
 	position: absolute;
 	margin-left: 4%;
-	background-color: #ffa;
+	background-color: #ff5;
 	top: 50%;
 	border-radius: 100px;
 }
