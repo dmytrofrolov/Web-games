@@ -6,7 +6,8 @@ HTML/CSS/JS
 Phonegap
 
 You can see the first release for this game:
-* [Train your game](http://memory.udesgo.com)
+[Train your brain](http://udesgo.com)
+=========
 
 Todo list:
 * Change design
