@@ -1,0 +1,22 @@
+Web-Games
+========
+
+Some games based on web technologies:
+HTML/CSS/JS
+Phonegap
+
+You can see the first release for this game:
+[Train your brain](http://udesgo.com)
+=========
+
+Todo list:
+* Change design
+* Make android game
+* Add options
+* Add about/contact page
+<<<<<<< HEAD
+* Add different shapes [CSS shapes](http://css-tricks.com/examples/ShapesOfCSS/)
+=======
+* Add different shapes
+>>>>>>> 60eab6d79f6addc0bee7bdc05512d3f014d6c2e2
+* Make different difficulty
