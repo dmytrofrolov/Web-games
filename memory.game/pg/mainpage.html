@@ -2,8 +2,10 @@
     $(document).ready(function() {
     	$("button#newgame").click(function(){
     		$("div#content").fadeOut(100, function(){
-    			$("div#content").load("/pg/gamepage.html");
-				$("div#content").fadeIn(100);
+    			$("div#content").load("/pg/gamepage.html", function(){
+    				$("div#content").fadeIn(100);
+    			});
+				
     		});
 	    	
     	});
@@ -23,5 +25,17 @@
 		<button id="newgame">
 			New Game
 		</button>
+	</div>
+
+	<div class="bottomaddblock">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- Memory game -->
+		<ins class="adsbygoogle"
+		     style="display:inline-block;width:970px;height:250px"
+		     data-ad-client="ca-pub-9869351870996059"
+		     data-ad-slot="5463776304"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
 	</div>
 </div>

@@ -13,5 +13,5 @@ Todo list:
 * Make android game
 * Add options
 * Add about/contact page
-* Add different shapes
+* Add different shapes [CSS shapes](http://css-tricks.com/examples/ShapesOfCSS/)
 * Make different difficulty
