@@ -193,13 +193,13 @@ div.ingame div.info div.gameinstruction button:hover{
 
 div.ingame div.gamearea{
 	height: 100%;
-	background-color: #112;
+
 }
 
 div.gamearea div.circle{
 	position: absolute;
 	margin-left: 4%;
-	background-color: #ff5;
+	background-color: #006245;
 	top: 50%;
 	border-radius: 100px;
 }
@@ -211,6 +211,6 @@ div.gamearea .wrong:hover{
 }
 
 div.gamearea div.circle:hover{
-	box-shadow: 0px 0px 5px 1px #ff5;
+	box-shadow: 0px 0px 5px 2px #447;
 }
 

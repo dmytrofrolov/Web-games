@@ -5,7 +5,7 @@
 	var fadeSpeed = 50;
 	var marginTopForCircles = $(window).height() * 0.125;
 	var minShapeSize = parseInt(minSize) * 0.05;
-	var maxShapeSize = parseInt(minSize) * 0.10;
+	var maxShapeSize = parseInt(minSize) * 0.20;
 	var gameareaWidth = $(window).width() * 0.90;
 	var gameareaHeight = $(window).height() * 0.80;
 	//$("div.gamearea").innerHTML = "";
@@ -20,6 +20,8 @@
     	$("button.next").click(function(){
     		$("div.info").fadeOut(fadeSpeed, function(){
 	    		document.getElementById("message").innerHTML = "";
+				document.getElementById("level").innerHTML = "Level: ";
+				document.getElementById("next").innerHTML = "GO NEXT!";
 	    		$("div.gamearea").fadeIn(fadeSpeed);
     		});    		
     	});
@@ -44,7 +46,9 @@
 
 			setTimeout(function () {
 				document.getElementById("message").innerHTML = "Sorry, you loose!";
+				document.getElementById("level").innerHTML = "Your result: ";
 				document.getElementById("gamearea").innerHTML = "";
+				document.getElementById("next").innerHTML = "Again!";
 				shapesNumber = 0;	//number of shapes and scores
 				shapesArray = [];
 				$("div.gamearea").fadeOut(fadeSpeed, function(){
@@ -94,9 +98,9 @@
 		</div>
 		<div class="gameinstruction">
 			<div id="message"></div>
-			<div class="level">Level <span id="levelnumber">0</span></div>
+			<div class="level"><span id="level">Level </span><span id="levelnumber">0</span></div>
 			<div align="center">Click on the last added shape</div>
-			<button class="next">GO!</button>
+			<button id="next" class="next">GO!</button>
 		</div>
 	</div>
 	<div id="gamearea" class="gamearea">
