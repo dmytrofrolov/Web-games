@@ -1,3 +1,4 @@
+@import url(fonts/font.css) ;
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -29,11 +30,12 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	background: url(/img/darkback.jpg) #111127;
+	background-color: rgb(0, 138, 146);
 	background-repeat: repeat-x repeat-y;
 	line-height: 1;
 	overflow: hidden;
-	font-family: Helvetica;
+	font-family: 'CANDARA';
+
 }
 ol, ul {
 	list-style: none;
@@ -88,10 +90,11 @@ div.mainheader button:hover{
 div.content{
 	margin-left: 5%;
 	margin-right: 5%;
-	background-color: #ffe;
-	background-image: url(/img/lightback.jpg);
+	background-color: rgb(212,112,0);
 	background-repeat: repeat;
 	font-size: 1.5em;
+	border: 10px solid rgb(147,15,3);
+	border-radius: 40px;
 }
 
 
@@ -148,8 +151,6 @@ div.ingame{
 
 div.ingame div.info{
 	height: 100%;
-	background-image: url(/img/lightback.jpg);
-	background-color: #eef;
 }
 
 div.info div.gameinstruction{
@@ -181,14 +182,15 @@ div.ingame div.info div.gameinstruction button{
 	margin-left: 25%;
 	font-size: 3em;
 	font-weight: 800;
-	color:#ffa;
-	border: none;
-	background-color: #112;
-	box-shadow: 1px 1px 2px 3px #557;
+	color:rgb(147, 15, 3);
+	border-radius: 200px;
+	border: 10px solid rgb(147, 15, 3);
+	background-color: rgb(212, 112, 0);
+	box-shadow: 1px 1px 2px 3px  rgb(147, 15, 3);
 }
 
 div.ingame div.info div.gameinstruction button:hover{
-		box-shadow: 1px 1px 5px 6px #88a;
+		box-shadow: 1px 1px 5px 2px rgb(212, 112, 0);
 }
 
 div.ingame div.gamearea{

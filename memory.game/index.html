@@ -30,9 +30,8 @@
     	    	
     	    	$("button#home").click(function(){
 		    		$("div#content").fadeOut(100, function(){
-		    			$("div#content").load("/pg/mainpage.html",function(){
-		    				$("div#content").fadeIn(100);
-		    			});
+		    			$("div#content").load("pg/mainpage.html");
+		    			$("div#content").fadeIn(100);
 		    		});
 			    	
 		    	});
