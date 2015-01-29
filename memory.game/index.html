@@ -9,9 +9,9 @@
 		<script type="text/javascript">
 		    $(document).ready(function() {
 		    	var highscore = 0;
-		    	var mainheaderPart = $(window).height()*0.10;
-		    	var contentPart = $(window).height() - mainheaderPart - $(document).height()*0.080;
-		    	$("body").css("height", $(window).height());
+		    	var mainheaderPart = $(window).height()*0.05;
+		    	var contentPart = $(window).height() - mainheaderPart - $(document).height()*0.090;
+		    	$("body").css("height", $(window).height()-mainheaderPart);
 		    	$("div.mainheader").css("height", mainheaderPart);
 		    	$("div#content").css("height", contentPart);			
 				$("button#home").css("height", mainheaderPart);

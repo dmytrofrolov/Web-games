@@ -34,6 +34,8 @@ body {
 	background-repeat: repeat-x repeat-y;
 	line-height: 1;
 	overflow: hidden;
+	color: rgb(147,15,3);
+	font-weight: 600;
 	font-family: 'CANDARA';
 
 }
@@ -61,6 +63,7 @@ div.mainheader{
 	background-color: #ffe;
 	background-image: url(/img/lightback.jpg);
 	height: 100px;
+	display: none;
 }
 div.mainheader div.titleinheader{
 	margin-top: 1%;
@@ -90,8 +93,6 @@ div.mainheader button:hover{
 div.content{
 	margin-left: 5%;
 	margin-right: 5%;
-	background-color: rgb(212,112,0);
-	background-repeat: repeat;
 	font-size: 1.5em;
 	border: 10px solid rgb(147,15,3);
 	border-radius: 40px;
@@ -105,12 +106,16 @@ div.mainmenu{
 	margin: 20px 0px;
 	height: 100%;
 	text-align: center;
+	margin-top: 0px;
+	border-radius: 29px;
+	background-color:  rgb(212,112,0);
 }
 
 div.topaddblock{
 	text-align: center;
 	height: 100px;
 	overflow: hidden;
+	padding-top: 30px;
 }
 
 div.maintoppage{
@@ -122,19 +127,21 @@ div.mainbuttons{
 }
 
 div.mainmenu button{
-	width: 40%;
-	height: 30%;
-	margin-bottom: 10px;
-	color: #22f;
-	font-size: 1.5em;
-	border: none;
-	box-shadow: 0px 0px 3px 3px #aaf;
-	background-color: #eff;
+	width: 50%;
+	height: 50%;
+	margin-top: 2%;
+	font-size: 2em;
+	font-weight: 800;
+	color: #930F03;
+	border-radius: 200px;
+	border: 10px solid #930F03;
+	background-color: #D47000;
+
 }
 
 div.mainmenu button:hover{
-	box-shadow: 0px 0px 5px 7px #aaf;
-	text-shadow: 1px 1px 2px #99c;
+		box-shadow: 1px 1px 2px 3px #930F03;
+	text-shadow: 1px 1px 2px  #930F03;
 }
 
 div.bottomaddblock{
@@ -147,10 +154,13 @@ In game
 */
 div.ingame{
 	height: inherit;
+	
 }
 
 div.ingame div.info{
 	height: 100%;
+	background-color: rgb(212,112,0);
+	border-radius: 30px;
 }
 
 div.info div.gameinstruction{
@@ -195,24 +205,27 @@ div.ingame div.info div.gameinstruction button:hover{
 
 div.ingame div.gamearea{
 	height: 100%;
-
+	background: none;
 }
 
 div.gamearea div.circle{
 	position: absolute;
 	margin-left: 4%;
-	background-color: #006245;
+	background-color: rgb(212, 112, 0);
+	border: 2px solid #930F03;
 	top: 50%;
 	border-radius: 100px;
-}
-
-div.gamearea .wrong,
-div.gamearea .wrong:hover{
-		background-color: #f55 !important;;
-		box-shadow: 0px 0px 5px 1px #f55 !important;
 }
 
 div.gamearea div.circle:hover{
 	box-shadow: 0px 0px 5px 2px #447;
 }
+
+div.gamearea div.circle.wrong,
+div.gamearea div.circle.wrong:hover{
+		background-color: rgb(147, 15, 3); !important;;
+		box-shadow: 0px 0px 5px 1px rgb(147, 15, 3); !important;
+}
+
+
 

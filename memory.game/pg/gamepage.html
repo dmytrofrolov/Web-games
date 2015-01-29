@@ -3,16 +3,17 @@
 	var shapesArray = [];	//array with type, size, position of the shapes
 	var minSize = $(window).height()>$(window).width()?$(window).width()*0.9:$(window).height()*0.80;//minimal height or width of screen
 	var fadeSpeed = 50;
-	var marginTopForCircles = $(window).height() * 0.125;
+	var marginTopForCircles = $(window).height() * 0.04;
 	var minShapeSize = parseInt(minSize) * 0.05;
 	var maxShapeSize = parseInt(minSize) * 0.20;
 	var gameareaWidth = $(window).width() * 0.90;
 	var gameareaHeight = $(window).height() * 0.80;
+	var inGame = false;
 	//$("div.gamearea").innerHTML = "";
 
     $(document).ready(function() {
 		gameareaWidth = $(window).width() * 0.90;
-		gameareaHeight = $(window).height() * 0.80;
+		gameareaHeight = $(window).height() * 0.90;
 		$("div.gamearea").fadeOut(0, function(){
 			addNewShape();
 		});
@@ -23,43 +24,46 @@
 				document.getElementById("level").innerHTML = "Level: ";
 				document.getElementById("next").innerHTML = "GO NEXT!";
 	    		$("div.gamearea").fadeIn(fadeSpeed);
+	    		inGame=true;
     		});    		
     	});
     });
 
 	function shapeClick(shapeId){
-		//if user clicks on shape
-		if(shapeId==shapesNumber){
-			//
-			document.getElementById("levelnumber").innerHTML = shapesNumber.toString();
-			$("div.gamearea").fadeOut(fadeSpeed, function(){
-				$("div.info").fadeIn(fadeSpeed,function(){
-					addNewShape();
-				});
-			});
-		}else{
-			var oneBlinkTime = 400, blinkTimes = 8;
-			for(var i = 0; i<blinkTimes;i++)
-				setTimeout(function(){
-				    $("div#"+shapesNumber.toString()).toggleClass("wrong");
-				}, oneBlinkTime*i);
-
-			setTimeout(function () {
-				document.getElementById("message").innerHTML = "Sorry, you loose!";
-				document.getElementById("level").innerHTML = "Your result: ";
-				document.getElementById("gamearea").innerHTML = "";
-				document.getElementById("next").innerHTML = "Again!";
-				shapesNumber = 0;	//number of shapes and scores
-				shapesArray = [];
+		if(inGame==true){
+			inGame=false;
+			//if user clicks on shape
+			if(shapeId==shapesNumber){
+				//
+				document.getElementById("levelnumber").innerHTML = shapesNumber.toString();
 				$("div.gamearea").fadeOut(fadeSpeed, function(){
 					$("div.info").fadeIn(fadeSpeed,function(){
 						addNewShape();
 					});
 				});
-		    }, oneBlinkTime * blinkTimes);
+			}else{
+				var oneBlinkTime = 400, blinkTimes = 8;
+				for(var i = 0; i<blinkTimes;i++)
+					setTimeout(function(){
+					    $("div#"+shapesNumber.toString()).toggleClass("wrong");
+					}, oneBlinkTime*i);
+
+				setTimeout(function () {
+					document.getElementById("message").innerHTML = "Sorry, you loose!";
+					document.getElementById("level").innerHTML = "Your result: ";
+					document.getElementById("gamearea").innerHTML = "";
+					document.getElementById("next").innerHTML = "Again!";
+					shapesNumber = 0;	//number of shapes and scores
+					shapesArray = [];
+					$("div.gamearea").fadeOut(fadeSpeed, function(){
+						$("div.info").fadeIn(fadeSpeed,function(){
+							addNewShape();
+						});
+					});
+			    }, oneBlinkTime * blinkTimes);
+			}
+
 		}
-
-
 	}
 
 	function addNewShape(){
