@@ -6,13 +6,13 @@
 	var marginTopForCircles = $(window).height() * 0.04;
 	var minShapeSize = parseInt(minSize) * 0.05;
 	var maxShapeSize = parseInt(minSize) * 0.20;
-	var gameareaWidth = $(window).width() * 0.90;
-	var gameareaHeight = $(window).height() * 0.80;
+	var gameareaWidth = $(window).height() * 0.90;
+	var gameareaHeight = $(window).height() * 0.90;
 	var inGame = false;
 	//$("div.gamearea").innerHTML = "";
 
     $(document).ready(function() {
-		gameareaWidth = $(window).width() * 0.90;
+		gameareaWidth = $(window).height() * 0.90;
 		gameareaHeight = $(window).height() * 0.90;
 		$("div.gamearea").fadeOut(0, function(){
 			addNewShape();
@@ -69,6 +69,7 @@
 	function addNewShape(){
 		var classes = ["circle", "rectangle"];
 		shapesNumber+=1;
+		var marginLeftCoef = $(window).width()/2 - $(window).height()/2-$(window).height()*0.05;
 		var newShapeStyle = "";
 		var newShapeSize, newShapeX, newShapeY;
 		var problems = 0;
@@ -88,7 +89,7 @@
 		}while(problems!=0);
 		shapesArray.push(["circle",newShapeSize,[newShapeX,newShapeY]]);
 		newShapeStyle += "height: "+newShapeSize+"px; width: "+newShapeSize+"px;";
-		newShapeStyle += "top: "+newShapeY+"px; left: "+newShapeX+"px;";
+		newShapeStyle += "top: "+newShapeY+"px; left: "+(newShapeX+marginLeftCoef)+"px;";
 		//alert(newShapeStyle);
 		$("div.gamearea").append("<div class=\""+classes[0]+"\" id=\""+shapesNumber+"\" onclick=\"shapeClick("+shapesNumber+");\" style=\""+newShapeStyle+"\"></div>");
 		$("div.circle").css("margin-top",  marginTopForCircles);

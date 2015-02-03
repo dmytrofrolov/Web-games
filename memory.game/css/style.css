@@ -91,8 +91,8 @@ div.mainheader button:hover{
 }
 
 div.content{
-	margin-left: 5%;
-	margin-right: 5%;
+	margin-left: auto;
+	margin-right: auto;
 	font-size: 1.5em;
 	border: 10px solid rgb(147,15,3);
 	border-radius: 40px;
@@ -127,8 +127,8 @@ div.mainbuttons{
 }
 
 div.mainmenu button{
-	width: 50%;
-	height: 50%;
+	width: 40%;
+	height: 80%;
 	margin-top: 2%;
 	font-size: 2em;
 	font-weight: 800;
@@ -186,21 +186,23 @@ div.gameinstruction div.level span{
 }
 
 div.ingame div.info div.gameinstruction button{
-	width: 50%;
+	width: 40%;
 	height: 50%;
 	margin-top: 2%;
-	margin-left: 25%;
-	font-size: 3em;
+	margin-left: 30%;
+	margin-right: 30%;
+	font-size: 2em;
 	font-weight: 800;
 	color:rgb(147, 15, 3);
 	border-radius: 500px;
 	border: 10px solid rgb(147, 15, 3);
 	background-color: rgb(212, 112, 0);
-	box-shadow: 1px 1px 2px 3px  rgb(147, 15, 3);
-}
+	box-shadow: 1px 1px 5px 2px rgb(212, 112, 0);
+	}
 
 div.ingame div.info div.gameinstruction button:hover{
-		box-shadow: 1px 1px 5px 2px rgb(212, 112, 0);
+	box-shadow: 1px 1px 2px 3px  rgb(147, 15, 3);
+
 }
 
 div.ingame div.gamearea{
@@ -214,7 +216,7 @@ div.gamearea div.circle{
 	background-color: rgb(212, 112, 0);
 	border: 2px solid #930F03;
 	top: 50%;
-	border-radius: 100px;
+	border-radius: 500px;
 }
 
 div.gamearea div.circle:hover{
