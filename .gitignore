@@ -20,4 +20,5 @@
 *.out
 *.app
 
-/php/
+*config*.php
+*.txt

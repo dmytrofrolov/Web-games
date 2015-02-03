@@ -3,9 +3,9 @@
 	var shapesArray = [];	//array with type, size, position of the shapes
 	var minSize = $(window).height()>$(window).width()?$(window).width()*0.9:$(window).height()*0.80;//minimal height or width of screen
 	var fadeSpeed = 50;
-	var marginTopForCircles = $(window).height() * 0.04;
+	var marginTopForCircles = $(window).height() * 0.03;
 	var minShapeSize = parseInt(minSize) * 0.05;
-	var maxShapeSize = parseInt(minSize) * 0.20;
+	var maxShapeSize = parseInt(minSize) * 0.15;
 	var gameareaWidth = $(window).height() * 0.90;
 	var gameareaHeight = $(window).height() * 0.90;
 	var inGame = false;
@@ -23,6 +23,7 @@
 	    		document.getElementById("message").innerHTML = "";
 				document.getElementById("level").innerHTML = "Level: ";
 				document.getElementById("next").innerHTML = "GO NEXT!";
+				document.getElementById("youarebetter").innerHTML = "";
 	    		$("div.gamearea").fadeIn(fadeSpeed);
 	    		inGame=true;
     		});    		
@@ -53,6 +54,16 @@
 					document.getElementById("level").innerHTML = "Your result: ";
 					document.getElementById("gamearea").innerHTML = "";
 					document.getElementById("next").innerHTML = "Again!";
+					document.getElementById("youarebetter").innerHTML = "Please wait...";
+		            $.ajax({
+						type: "POST",
+						url: "/php/stat.php",
+						data: "score="+shapesNumber.toString(),
+						success: function(html){
+							document.getElementById("youarebetter").innerHTML = html + '<br><a onclick="return !window.open(this.href, \'Facebook\', \'width=640,height=300\')" target="_blank" id="sharefb" href="http://www.facebook.com/sharer.php?s=100&p[title]=Train+your+brain&p[summary]=Try+very+simple+memory+training+game!&p[url]=html%3A%2F%2Fudesgo.com"> Share on Facebook!</a>';
+						}
+					});
+
 					shapesNumber = 0;	//number of shapes and scores
 					shapesArray = [];
 					$("div.gamearea").fadeOut(fadeSpeed, function(){
@@ -104,7 +115,7 @@
 		<div class="gameinstruction">
 			<div id="message"></div>
 			<div class="level"><span id="level">Level </span><span id="levelnumber">0</span></div>
-			<div align="center">Click on the last added shape</div>
+			<div align="center" id="youarebetter">Click on the last added shape</div>
 			<button id="next" class="next">GO!</button>
 		</div>
 	</div>
