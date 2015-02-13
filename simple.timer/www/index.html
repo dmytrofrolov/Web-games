@@ -13,17 +13,9 @@
 		$("button#start").click(function(){
 			
 			if(!timerWork){
-				document.getElementById('start').innerHTML = "Pause";
-				hours = document.getElementById("hours").value;
-				minutes = document.getElementById("minutes").value;
-				seconds = document.getElementById("seconds").value;
-				updateTime();
-				timerWork = 1;
 				startTimer();
 			}else{
-				timerWork = 0;
-				window.clearInterval(timerVar);
-				document.getElementById('start').innerHTML = "Start";
+				stopTimer();
 			}
 			
 			
@@ -32,19 +24,39 @@
 
 	});
 
-	function startTimer(){
+	function newTimer(){
 		timerVar = setInterval(function(){updateTime();},1000);
 	}
 
 	function updateTime(){
 		seconds-=1;
 		document.getElementById('showtime').innerHTML = hours.toString()+" : "+minutes.toString()+" : "+seconds.toString();
+		//if(hours==minutes && minutes==seconds && seconds==0){
+		//	playSound();
+		//	stopTimer();
+		//}
+	}
+
+	function startTimer(){
+		document.getElementById('start').innerHTML = "Pause";
+		hours = document.getElementById("hours").value;
+		minutes = document.getElementById("minutes").value;
+		seconds = document.getElementById("seconds").value;
+		updateTime();
+		timerWork = 1;
+		newTimer();
+	}
+
+	function stopTimer(){
+		timerWork = 0;
+		window.clearInterval(timerVar);
+		document.getElementById('start').innerHTML = "Start";
 	}
 
 	function playSound(){
-		//var audio = new Audio('sound/440.wav');
-		//audio.play();
-		//audio.stop();
+		var audio = new Audio('sound/440.wav');
+		audio.play();
+		audio.stop();
 	}
 </script>
 
