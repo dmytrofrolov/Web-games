@@ -29,13 +29,24 @@
 	}
 
 	function updateTime(){
+		if(seconds==-1){minutes-=1;seconds=59;}
+		if(minutes==-1){hours-=1;minutes=59;}
+
+		var toShow = "";
+		if(hours<=9)toShow+="0";
+		toShow+=hours.toString()+" : ";
+		if(minutes<=9)toShow+="0";
+		toShow+=minutes.toString()+" : ";
+		if(seconds<=9)toShow+="0";
+		toShow+=seconds.toString();
+		document.getElementById('showtime').innerHTML = toShow;
 		seconds-=1;
-		document.getElementById('showtime').innerHTML = hours.toString()+" : "+minutes.toString()+" : "+seconds.toString();
 		if(hours<=0 && minutes<=0 && seconds<=0){
 			stopTimer();
 			playSound();
 			
 		}
+		
 	}
 
 	function startTimer(){
