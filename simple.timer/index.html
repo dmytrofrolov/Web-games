@@ -1,8 +1,8 @@
 <html>
 <head>
-<title>Simple timer</title>
-<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-
+	<title>Simple timer</title>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<link href="css/style.css" rel="stylesheet" media="all">
 </head>
 <body>
 <script type="text/javascript">
@@ -73,12 +73,12 @@
 	}
 </script>
 
-<div>
-<input id="hours" value="00">
-<input id="minutes" value="00">
-<input id="seconds" value="30">
-<button id="start">Start</button>
+<div class="inputs">
+<input id="hours" value="00" size="2" maxlength="2">
+<input id="minutes" value="00" size="2" maxlength="2">
+<input id="seconds" value="30" size="2" maxlength="2">
 </div>
+<button id="start">Start</button>
 <div id="showtime"></div>
 </body>
 </html>

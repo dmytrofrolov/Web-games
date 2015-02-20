@@ -1,0 +1,12 @@
+div.inputs{
+  widows: 6em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+input{
+  width: 2em;
+  border: none;
+  position: relative;
+  font-size: 7em;
+}
