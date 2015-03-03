@@ -29,6 +29,7 @@
 	}
 
 	function updateTime(){
+		seconds-=1;
 		if(seconds==-1){minutes-=1;seconds=59;}
 		if(minutes==-1){hours-=1;minutes=59;}
 
@@ -40,7 +41,7 @@
 		if(seconds<=9)toShow+="0";
 		toShow+=seconds.toString();
 		document.getElementById('showtime').innerHTML = toShow;
-		seconds-=1;
+		
 		if(hours<=0 && minutes<=0 && seconds<=0){
 			stopTimer();
 			playSound();
