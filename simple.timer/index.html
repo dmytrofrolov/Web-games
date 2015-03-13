@@ -29,7 +29,7 @@
 	}
 
 	function updateTime(){
-		seconds-=1;
+		
 		if(seconds==-1){minutes-=1;seconds=59;}
 		if(minutes==-1){hours-=1;minutes=59;}
 
@@ -47,7 +47,7 @@
 			playSound();
 			
 		}
-		
+		seconds-=1;
 	}
 
 	function startTimer(){
