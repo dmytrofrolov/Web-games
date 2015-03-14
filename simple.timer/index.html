@@ -72,12 +72,16 @@
 		audio.play();
 		audio.stop();
 	}
+
+	function checkInput(id){
+		if(parseInt(document.getElementById(id).value)>59)document.getElementById(id).value=59;
+	}
 </script>
 
 <div class="inputs">
 <input id="hours" value="00" size="2" maxlength="2">
-<input id="minutes" value="00" size="2" maxlength="2">
-<input id="seconds" value="30" size="2" maxlength="2">
+<input id="minutes" onkeyup='checkInput("minutes");' value="00" size="2" maxlength="2">
+<input id="seconds" onkeyup='checkInput("seconds");' value="30" size="2" maxlength="2">
 </div>
 <button id="start">Start</button>
 <div id="showtime"></div>
